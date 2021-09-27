@@ -1,12 +1,31 @@
-class BankAccount {
+package com.company;
 
-	float balance =1000;
-	String owner = "Oliver";
-	float[] transactions = new float[5];
+public class BankAccount {
 
+    private float balance = 30000;
+    private String owner;
 
-public BankAccount(float balance, String owner, float[] transactions)
-	this.balance = balance;
-	this.owner = owner;
-	this.transactions = transactions;
+    public BankAccount(String owner) {
+        this.owner = owner;
+        this.balance = balance;
+    }
+
+    public void doTransaction(float amount) {
+        balance += amount;
+    }
+
+    public float getBalance() {
+        return balance;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    @Override
+    public String toString() {
+        String s;
+        s = owner +" : "+balance+"\n";
+        return s;
+    }
 }
